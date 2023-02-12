@@ -1,0 +1,44 @@
+.FootImg{
+    margin-top: 50px;
+    position: relative;
+    color: white;
+}
+
+.FootImg img{
+    height: 400px;
+    width: 100%;
+    opacity: 1;
+}
+
+.foottext{
+    position: absolute;
+    top: 0%;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%; 
+    padding-top: 30px;   
+}
+
+.foottext img{
+    /* position: absolute; */
+width: 313px;
+height: 245px;
+border-radius: 50px;
+    /* opacity: 1; */
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+}
+
+.links h3{
+    font-weight: bold;
+}
+
+.links a{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}

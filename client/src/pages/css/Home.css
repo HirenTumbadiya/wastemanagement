@@ -1,0 +1,80 @@
+body{
+    background-color: #EFF9F0;
+}
+
+.zero-waste{
+    margin-top: 8%;
+}
+
+.zero-waste h1{
+    text-align: center;
+}
+
+.zero-waste p{
+    margin-top: 35px;
+    text-align: center;
+}
+
+.zero-waste img{
+    border-radius: 60px;
+}
+
+.impact{
+    margin-top: 5%;
+}
+
+.impact h1{
+    text-align: center;
+}
+
+.impact p{
+    text-align: center;
+    margin-top: 35px;
+}
+
+.impact .Card{
+    margin-top: 50px;
+}
+
+.Card{
+    justify-content: space-around;
+    height: auto;
+    text-align: center;
+}
+
+.Card img{
+    margin-top: 10px;
+    border-radius: 50px;
+    height: 40%;
+}
+
+.solution{
+    margin-top: 5%;
+    justify-content: space-around;
+    height: auto;
+    text-align: center;
+}
+
+.solution p{
+    margin-top: 35px;
+}
+
+.solution .Card{
+    margin-top: 50px;
+}
+.solution .Card img{
+    margin-top: 15px;
+    height: 60%;
+    border-radius: 100%;
+}
+
+.poster img {
+width: 1420px;
+height: 873px;
+left: 30px;
+top: 2510px;
+margin-left: 50px;
+margin-top: 50px;
+}
+
+

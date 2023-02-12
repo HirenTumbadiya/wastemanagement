@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Calibri:wght@400&display=swap");
+
+/* *{ */
+  /* background-color: #EFF9F0; */
+/* } */
+
+:root {
+  /* fonts */
+  --font-calibri: Calibri;
+
+  /* font sizes */
+  --font-size-sm: 15px;
+  --font-size-base: 20px;
+  --font-size-lg: 60px;
+
+  /* Colors */
+  --color-darkolivegreen: #265518;
+  --color-black: #000;
+  --color-white: #fff;
+  --color-gainsboro: #d9d9d9;
+
+  /* border radiuses */
+  --br-sm: 20px;
+  --br-md: 30px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: normal;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
