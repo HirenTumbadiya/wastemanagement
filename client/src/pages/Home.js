@@ -1,5 +1,6 @@
-import React from 'react'
-import Card from '../components/Card'
+import React from 'react';
+import Card from '../components/Card';
+import Schedule from "../components/Schedule";
 import './css/Home.css';
 
 const Home = () => {
@@ -34,6 +35,16 @@ const Home = () => {
       <Card/>
       <Card/>
     </div>
+    </div>
+    <div className="schedule mx-5 my-5 py-5">
+      <div className='text-center mt-5'>
+      <h1>Schedule Pickup</h1>
+      <p>for an waste collection</p>
+      </div>
+      <div>
+        <Schedule/>
+      </div>
+
     </div>
     <div className="solution">
     <h1>Solution We Provide</h1>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./css/contactUs.css"
+// import "./css/contactUs.css"
 import image from  "../utils/contact.jpg"
 
 const ContactUs = () => {
