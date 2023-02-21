@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import "./css/contactUs.css"
+import "./css/contactUs.css"
 import image from  "../utils/contact.jpg"
 
 const ContactUs = () => {
@@ -28,7 +28,7 @@ const ContactUs = () => {
     <form
      onSubmit={handleSubmit}
      >
-      <div className='img'>
+      <div className='contact-img'>
         <img src={image} alt="" />
       </div>
       <div className="rectangle">

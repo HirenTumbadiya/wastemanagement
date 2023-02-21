@@ -3,6 +3,7 @@ body{
 }
 
 .zero-waste{
+    /* width: fit-content; */
     margin-top: 8%;
 }
 
@@ -75,6 +76,30 @@ left: 30px;
 top: 2510px;
 margin-left: 50px;
 margin-top: 50px;
+}
+
+@media only screen and (max-width: 600px) {
+    .zero-waste{
+    width: fit-content;
+  }
+
+  .zero-waste img:nth-child(2){
+    margin-top: 50px;
+    height: 400px;
+  }
+
+  .impact,.solution{
+    width: 799px;
+  }
+  .Card{
+    display: grid !important;
+    grid-template-columns: auto auto;
+    grid-gap: 50px;
+    padding: 25px;
+  }
+  .schedule{
+    width: fit-content;
+  }
 }
 
 

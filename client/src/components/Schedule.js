@@ -15,7 +15,8 @@ function Pickup() {
     const [value, setValue] = useState()
   return (
     <>
-    <Form className="d-flex form-inline" style={{marginLeft: "251px", marginTop: "60px"}}>
+    <div className="schedule-container">
+    <Form className="d-flex form-inline flex-column flex-sm-row" style={{marginLeft: "251px", marginTop: "60px"}}>
       <Form.Group className="mx-md-5 mb-3" controlId="formBasicEmail">
         <Form.Control type="email" placeholder="Full Name" />
       </Form.Group>
@@ -38,8 +39,9 @@ function Pickup() {
         <Form.Control type="textarea" placeholder="Message"  />
       </Form.Group>
       <Button className='btn' variant="outline-success" type="submit" style={{marginLeft: "700px"}}>
-        Submit
+        Order Pickup
       </Button>
+      </div>
       </>
   );
 }
