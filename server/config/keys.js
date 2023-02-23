@@ -1,4 +1,4 @@
 module.exports = {
-    mongoURI: "mongodb+srv://hirentumbadiya:<password>@cluster0.cswhsle.mongodb.net/?retryWrites=true&w=majority",
+    mongoURI: "mongodb://localhost:27017/register",
     secretOrKey: "secret"
   };

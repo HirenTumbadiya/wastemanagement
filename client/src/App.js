@@ -55,16 +55,16 @@ function App() {
 // function App() {
   return (
     <>
-      <Navbar/>
+
+      {(pathname !== "/login" && pathname !== "/Register") && <Navbar/>}
       <Routes>
-        <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/Contact Us" element={<ContactUs/>}/>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/ContactUs" element={<ContactUs />} />
+        <Route exact path="/Register" element={<RegistrationPage1 />} />
+        <Route exact path="/Login" element={<RegistrationPage />} />
       </Routes>
-      <Footer/>
-      <Routes>
-        <Route exact path="/Register" element={<RegistrationPage1/>}/>
-        <Route exact path="/Login" element={<RegistrationPage/>}/>
-        </Routes>
+      {(pathname !== "/login" && pathname !== "/Register") && <Footer/>}
+
     </>
   );
 }

@@ -15,8 +15,8 @@ function NavScroll() {
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="me-auto my-2 my-lg-0 mx-auto"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
+            style={{ maxHeight: '1000px' }}
+            // navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="#action2">About Us</Nav.Link>

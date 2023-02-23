@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
+const {v4: uuidv4} = require("uuid");
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
 const validateLoginInput = require("../../validation/login");
@@ -28,24 +29,53 @@ router.post("/register", (req, res) => {
         const newUser = new User({
           name: req.body.name,
           email: req.body.email,
-          password: req.body.password
+          password: req.body.password,
+          userauth: generateUserAuth(), // add a unique identifier to the user document 
         });
+
+        // Check if the `userauth` field is unique before saving to the database
+        // User.collection.createIndex({ "userauth": 1 }, { unique: true });
+    checkUserAuthUniqueness(newUser.userauth)
+        .then(() => {
+        
   // Hash password before saving in database
-        bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.genSalt(10, (err,salt) => {
           bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) throw err;
             newUser.password = hash;
-            // Check if the `userauth` field is unique before saving to the database
-            User.collection.createIndex({ "userauth": 1 }, { unique: true });
+
             newUser
-              .save()
-              .then(user => res.json(user))
-              .catch(err => console.log(err));
+            .save()
+            .then(user => res.json(user))
+            .catch(err => console.log(err));
           });
         });
+      })
+        .catch((err) => console.log(err));
       }
     });
   });
+
+  function generateUserAuth(){
+    return uuidv4();
+  }
+
+  function checkUserAuthUniqueness(userauth){
+    return new Promise((resolve, reject) => {
+      User.findOne({ userauth: userauth})
+        .then((user) => {
+          if(user){
+            checkUserAuthUniqueness(generateUserAuth())
+              .then(resolve)
+              .catch(reject);
+          }
+          else{
+            resolve();
+          }
+        })
+        .catch(reject);
+    })
+  }
 
 
   // @route POST api/users/login
