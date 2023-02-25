@@ -1,0 +1,52 @@
+$color: darkgreen;
+@for $i from 10 through 100 {
+  @if $i % 5 == 0 {
+    $percentage: $i*1%;
+    .darken-#{$i} {
+      color: darken($color, $percentage);
+    }
+    .lighten-#{$i} {
+      color: lighten($color, $percentage);
+    }
+    .mix-black-#{$i} {
+      color: mix(black, $color, $percentage);
+    }
+    .mix-white-#{$i} {
+      color: mix(white, $color, $percentage);
+    }
+    
+  }
+}
+
+$position-values: (
+  0: 0,
+  2: 2%,
+  25: 25%,
+  50: 50%,
+  100: 100%
+);
+
+.link-unstyled {
+    &,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus,
+    &:active:hover {
+      font-style: inherit;
+      color: inherit;
+      background-color: transparent;
+      font-size: inherit;
+      text-decoration: none;
+      font-variant: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+      font-family: inherit;
+      border-radius: inherit;
+      border: inherit;
+      outline: inherit;
+      box-shadow: inherit;
+      padding: inherit;
+      vertical-align: inherit;
+    }
+  }

@@ -1,9 +1,12 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from 'react-bootstrap/esm/Button';
+import { CAvatar } from '@coreui/react'
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function NavScroll() {
   return (
@@ -19,24 +22,24 @@ function NavScroll() {
             // navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#action2">About Us</Nav.Link>
-            <Nav.Link href="#action3">Services</Nav.Link>
-            <Nav.Link href="#action4">Process</Nav.Link>
-            <Nav.Link href="Contact Us">Contact US</Nav.Link>
+            <Nav.Link href="/aboutus">About Us</Nav.Link>
+            <Nav.Link href="/service">Services</Nav.Link>
+            <Nav.Link href="/process">Process</Nav.Link>
+            <Nav.Link href="/contactus">Contact US</Nav.Link>
           </Nav>
           <Form>
-          <NavDropdown className='' title="LogIn" id="navbarScrollingDropdown" style={{marginRight: "160px", color: "green", fontWeight: "bold"}}>
-              {/* <NavDropdown.Item href="#action3">Action</NavDropdown.Item> */}
-              <NavDropdown.Item href="login" style={{color: "green"}}>Login</NavDropdown.Item>
-              <NavDropdown.Item style={{color: "green"}}>My Account</NavDropdown.Item>
-              <NavDropdown.Item href="dashboard">Dashboard</NavDropdown.Item>
-              <NavDropdown.Item href="myservice">My Service</NavDropdown.Item>
-              <NavDropdown.Item href="rewards">My Rewards</NavDropdown.Item>
-              <NavDropdown.Item href="preference">My Preference</NavDropdown.Item>
-              <NavDropdown.Item href="logout" style={{color: "green"}}>Logout</NavDropdown.Item>
-            </NavDropdown>
-            {/* <Button href="Register" variant="outline-success" className='mx-2'>Register</Button> */}
-            {/* <Button href="login" variant="outline-success">Login</Button> */}
+            <DropdownButton
+            id="dropdown-variants-Success"
+            variant="success"
+            title="LogIn"
+            style={{marginRight: "160px", color: "green", fontWeight: "bold"}}
+          >
+            <Dropdown.Item href='login' className='darken-10 fw-bold'>LogIn</Dropdown.Item>
+            <Dropdown.Item className='darken-10 fw-bold'>My Account</Dropdown.Item>
+            <Dropdown.Item href="Dashboard">DashBoard</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item href="logout" className='darken-10 fw-bold'>Logout</Dropdown.Item>
+          </DropdownButton>
           </Form>
         </Navbar.Collapse>
       </Container>

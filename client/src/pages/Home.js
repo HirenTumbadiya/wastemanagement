@@ -2,6 +2,8 @@ import React from 'react';
 import Card from '../components/Card';
 import Schedule from "../components/Schedule";
 import './css/Home.css';
+import recycleimage from "./recycle.jpg"
+import Button from 'react-bootstrap/Button';
 
 const Home = () => {
   return (
@@ -42,7 +44,7 @@ const Home = () => {
       <p>for an waste collection</p>
       </div>
       <div>
-        {/* <Schedule/> */}
+        <Schedule/>
       </div>
 
     </div>
@@ -55,6 +57,16 @@ const Home = () => {
       <Card/>
       <Card/>
     </div>
+    </div>
+    <div className='d-flex p-5'>
+      <div className='w-50 p-5'>
+        <img className='w-100' src={recycleimage} alt="" />
+      </div>
+      <div className='w-50 p-5'>
+        <h1 className='darken-10'>Recycle Right</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam maxime dolorum, doloremque ipsa animi rerum delectus corrupti tenetur asperiores, vitae omnis voluptatem dolorem quae sequi?Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente libero quia optio dolores voluptate quis culpa excepturi quod ea assumenda reiciendis molestias, amet nesciunt laborum.</p>
+        <Button variant="outline-success">Learn How To Seperate Our Waste</Button>
+      </div>
     </div>
     {/* <div className="poster"> */}
       {/* <img src="https://img.freepik.com/free-vector/environmental-agency-poster-with-information-waste-collection-sorting-recycling_1284-8959.jpg?1&w=740&t=st=1675238768~exp=1675239368~hmac=7281835309088ee8e177a540f5a7bd4fd306070aeadc9a21def693de417aad73" */}

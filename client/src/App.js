@@ -8,8 +8,12 @@ import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ContactUs from './pages/ContactUs';
-import RegistrationPage from './pages/RegistrationPage';
-import RegistrationPage1 from './pages/RegistrationPage1';
+import RegistrationPage from './pages/Auth/Login';
+import RegistrationPage1 from './pages/Auth/Registration';
+import Dashboard from './pages/Dashboard';
+import AboutUs from './pages/AboutUs';
+import "./.scss"
+import Reward from './pages/Reward';
 
 function App() {
   const action = useNavigationType();
@@ -60,6 +64,8 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/ContactUs" element={<ContactUs />} />
+        <Route exact path='/aboutus' element={<AboutUs/>}/>
+        <Route exact path="/dashboard" element={<Dashboard />} />
         <Route exact path="/Register" element={<RegistrationPage1 />} />
         <Route exact path="/Login" element={<RegistrationPage />} />
       </Routes>

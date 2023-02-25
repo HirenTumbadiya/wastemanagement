@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import "./RegistrationPage.css";
+import "./css/Login.css";
 
 const RegistrationPage = () => {
   const navigate = useNavigate();

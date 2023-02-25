@@ -1,17 +1,7 @@
-.FootImg{
-    margin-top: 50px;
-    position: relative;
-    color: white;
-}
-
-.FootImg img{
-    height: 400px;
-    width: 100%;
-    opacity: 1;
-}
-
 .foottext{
-    position: absolute;
+    /* position: absolute; */
+    color: white    ;
+    background-color: darkgreen;
     top: 0%;
     display: flex;
     justify-content: space-around;
@@ -22,9 +12,10 @@
 
 .foottext img{
     /* position: absolute; */
-width: 313px;
-height: 245px;
-border-radius: 50px;
+    width: 313px;
+    height: 245px;
+    border-radius: 50px;
+    margin-bottom: 26px;
     /* opacity: 1; */
 }
 
@@ -44,17 +35,7 @@ border-radius: 50px;
 }
 
 @media only screen and (max-width: 600px) {
-    .FootImg{
-        color: black;
-        width: 799px;
-        margin-left: 25px;
-    }
-    .FootImg img{
-        display: none;
-    }
     .foottext img{
-        /* display: block; */
-        position: absolute;
         margin-left: 80%;
         margin-top: 60px;
         display: flex;
