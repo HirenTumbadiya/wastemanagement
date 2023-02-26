@@ -8,10 +8,10 @@ import { RiRoadMapLine } from 'react-icons/ri';
 const HorizontalBar = () => {
   return (
     <>
-        <div className="container">
+        <div className="container rounded-circle bg-secondary" style={{marginTop: "55px", height: "40px", marginBottom: "20px"}}>
             <div className='d-flex justify-content-center h4 ' style={{gap:"125px"}}>
                 <a href="" className='link-unstyled'><BsFillFilePersonFill/></a>
-                <a href="/rewards" className='link-unstyled'><BsGiftFill/></a>
+                <a href="/Dashboard/rewards" className='link-unstyled'><BsGiftFill/></a>
                 <a href="" className='link-unstyled'><FaMailBulk/></a>
                 <a href="" className='link-unstyled'><RiRoadMapLine/></a>
                 <a href="" className='link-unstyled'><GrUserSettings/></a>

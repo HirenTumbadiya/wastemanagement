@@ -14,6 +14,7 @@ import Dashboard from './pages/Dashboard';
 import AboutUs from './pages/AboutUs';
 import "./.scss"
 import Reward from './pages/Reward';
+import HorizontalBar from './components/HorizontalBar';
 
 function App() {
   const action = useNavigationType();
@@ -61,11 +62,14 @@ function App() {
     <>
 
       {(pathname !== "/login" && pathname !== "/Register") && <Navbar/>}
+      {(pathname.includes("/Dashboard") == true) && <HorizontalBar/>}
+      
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/ContactUs" element={<ContactUs />} />
-        <Route exact path='/aboutus' element={<AboutUs/>}/>
-        <Route exact path="/dashboard" element={<Dashboard />} />
+        <Route exact path='/Aboutus' element={<AboutUs/>}/>
+        <Route exact path="/Dashboard" element={<Dashboard />} />
+        <Route exact path="/Dashboard/rewards" element={<Reward />} />
         <Route exact path="/Register" element={<RegistrationPage1 />} />
         <Route exact path="/Login" element={<RegistrationPage />} />
       </Routes>
