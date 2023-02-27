@@ -7,8 +7,44 @@ import Button from 'react-bootstrap/esm/Button';
 import { CAvatar } from '@coreui/react'
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import { UserContext } from '../App';
+import { useContext } from 'react';
 
 function NavScroll() {
+  const {state, dispatch} = useContext(UserContext);
+  const RenderMenu = () => {
+    if(state){
+      return(
+        <>
+          <DropdownButton
+            id="dropdown-variants-Success"
+            variant="success"
+            title="My Account"
+            style={{marginRight: "160px", color: "green", fontWeight: "bold"}}
+          >
+            <Dropdown.Item className='darken-10 fw-bold'>My Account</Dropdown.Item>
+            <Dropdown.Item href="Dashboard">DashBoard</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item href="logout" className='darken-10 fw-bold'>Logout</Dropdown.Item>
+          </DropdownButton>
+        </>
+      )
+    }else{
+      return(
+        <>
+          <DropdownButton
+            id="dropdown-variants-Success"
+            variant="success"
+            title="LogIn"
+            style={{marginRight: "160px", color: "green", fontWeight: "bold"}}
+          >
+            <Dropdown.Item href='login' className='darken-10 fw-bold'>LogIn</Dropdown.Item>
+          </DropdownButton>
+        </>
+      )
+    }
+  }
+
   return (
     <>
     <Navbar expand="lg" className='fixed-top' style={{backgroundColor: "#EFF9F0"}}>
@@ -28,18 +64,7 @@ function NavScroll() {
             <Nav.Link href="/contactus">Contact US</Nav.Link>
           </Nav>
           <Form>
-            <DropdownButton
-            id="dropdown-variants-Success"
-            variant="success"
-            title="LogIn"
-            style={{marginRight: "160px", color: "green", fontWeight: "bold"}}
-          >
-            <Dropdown.Item href='login' className='darken-10 fw-bold'>LogIn</Dropdown.Item>
-            <Dropdown.Item className='darken-10 fw-bold'>My Account</Dropdown.Item>
-            <Dropdown.Item href="Dashboard">DashBoard</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item href="logout" className='darken-10 fw-bold'>Logout</Dropdown.Item>
-          </DropdownButton>
+            <RenderMenu/>
           </Form>
         </Navbar.Collapse>
       </Container>

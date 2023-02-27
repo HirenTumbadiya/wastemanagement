@@ -1,11 +1,13 @@
-import { React, useCallback, useState } from "react";
+import { React, useCallback, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Button from 'react-bootstrap/Button';
+import { UserContext } from "../../App";
 
 
 const RegistrationPage = () => {
   const navigate = useNavigate();
+  const {state, dispatch} = useContext(UserContext)
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -21,6 +23,8 @@ try {
     });
     const token = response.data.token;
     localStorage.setItem('token',token);
+    dispatch({type: "USER", payload:true});
+    window.alert("Login Successfull");
     navigate('/')
   } catch (error) {
     console.error(error);
