@@ -18,9 +18,9 @@ const DB = require("./config/keys").mongoURI;
 
 const User = require("./models/userModel");
 
-// app.use(cors())
 
 const app = express();
+app.use(cors())
 
 // Bodyparser middleware
 app.use(

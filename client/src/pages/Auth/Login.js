@@ -1,40 +1,81 @@
-import { useCallback } from "react";
+import { React, useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./css/Login.css";
+import axios from "axios";
+import Button from 'react-bootstrap/Button';
+
 
 const RegistrationPage = () => {
   const navigate = useNavigate();
 
-  const onDontHaveAnClick = useCallback(() => {
-    navigate("/registration-page");
-  }, [navigate]);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+try {
+  
+
+    const response = await axios.post( 'http://localhost:5000/api/users/login', {
+      email,
+      password,
+    });
+    const token = response.data.token;
+    localStorage.setItem('token',token);
+    navigate('/')
+  } catch (error) {
+    console.error(error);
+  }
+
+    // handle successful login
+  }
 
   return (
-    <div className="registration-page">
-      <img
-        className="digital-screen-with-environmen-icon"
-        alt=""
-        src="../digitalscreenwithenvironmentday-1@2x.png"
-      />
-      <div className="welcome-back">Welcome back</div>
-      <div className="please-enter-your">Please enter your detail</div>
-      <form className="sign">
-    
-        <input className="sign-child1" type="text"  />
-        <input className="sign-child2" type="password"  />
-  
-        <div className="email1">Email</div>
-        <div className="password1">Password</div>
-        <input className="sign-child3" type="checkbox" required />
-        <div className="remember-me">Remember Me</div>
-        <div className="dont-have-an" onClick={onDontHaveAnClick}>
-          Don’t have an account ? Sign up
+    <>
+    <form onSubmit={handleSubmit} className="h-50 p-5 border border=dark align-items-center shadow" style={{margin: "180px 350px 150px", backgroundColor: "white"}}>
+        <h3 className="text-center text-light mb-5" style={{backgroundColor: "darkgreen", boxShadow:"5px 10px #888888", borderRadius: "9px"}}>Welcome Back</h3>
+        <div className="mb-4 px-5 mx-5">
+          <label className="mb-1">Email address</label>
+          <input
+            type="email"
+            value={email}
+            className="form-control w-75"
+            placeholder="Enter email"
+            onChange={(e) => {
+              setEmail(e.target.value)
+            }}
+          />
         </div>
-        <div className="forgot-password">Forgot password</div>
-        <button className="rectangle-button" />
-        <div className="sign-in">Sign In</div>
+        <div className="mb-3 px-5 mx-5">
+          <label className="mb-1">Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => {
+              setPassword(e.target.value)
+            }}
+            className="form-control w-75"
+            placeholder="Enter password"
+          />
+        </div>
+        <div className="mb-3">
+          <div className="custom-control custom-checkbox mx-5 px-5">
+            <input
+              type="checkbox"
+              className="custom-control-input"
+              id="customCheck1"
+              
+            />
+            <label className="custom-control-label" htmlFor="customCheck1">
+              Remember me
+            </label>
+          </div>
+        </div>
+        <div className="d-flex" style={{justifyContent: "center", gap:"200px"}}>
+        <Button variant="outline-success" type="submit">Submit</Button>
+        <Button variant="outline-success">Forgot Password?</Button>
+        </div>
       </form>
-    </div>
+    </>
   );
 };
 
